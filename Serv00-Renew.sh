@@ -62,6 +62,7 @@ echo "构建的 URL 是: $URL"
 use_wecom=false
 use_tg=false
 use_pushplus=false
+use_bark=false
 
 # 添加明确的提示
 echo "==================================="
@@ -102,7 +103,7 @@ for choice in $choices; do
         4)
             use_bark=true
             download_python_file "https://raw.githubusercontent.com/Nov07/Serv00_auto_script/master/Auto_connect_SSH-Bark.py" "Auto_connect_SSH-Bark.py"
-            install_required_modules "Auto_connect_SSH-PushPlus.py"
+            install_required_modules "Auto_connect_SSH-Bark.py"
             ;;
         *) echo "无效选项: $choice" ;;
     esac
