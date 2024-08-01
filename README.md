@@ -29,7 +29,7 @@
 　　进入domains目录并执行一键脚本：
 ```shell
 cd domains
-curl -O https://raw.githubusercontent.com/Nov7/Serv00_auto_script/master/Serv00-Renew.sh && chmod +x Serv00-Renew.sh && ./Serv00-Renew.sh
+curl -O https://raw.githubusercontent.com/Nov07/Serv00_auto_script/master/Serv00-Renew.sh && chmod +x Serv00-Renew.sh && ./Serv00-Renew.sh
 
 ```
 #### 参考设置图
