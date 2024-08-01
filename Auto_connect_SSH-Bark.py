@@ -72,21 +72,21 @@ def send_bark_message(title, content):
     global bark_message_sent
     bark_url = BARK_URL + "/push"
     data = {
-        "key": BARK_KEY,
+        "device_key": BARK_KEY,
         "title": title,
-        "content": content
+        "body": content
     }
     try:
         response = requests.post(bark_url, json=data)
         if response.status_code == 200:
-            bark_status = "PushPlus提醒消息发送成功"
-            print("温馨提醒：PushPlus提醒消息发送成功。")
+            bark_status = "Bark提醒消息发送成功"
+            print("温馨提醒：Bark提醒消息发送成功。")
         else:
-            bark_status = f"PushPlus提醒消息发送失败，状态码: {response.status_code}"
-            print(f"警告：PushPlus提醒消息发送失败！状态码: {response.status_code}")
+            bark_status = f"Bark提醒消息发送失败，状态码: {response.status_code}"
+            print(f"警告：Bark提醒消息发送失败！状态码: {response.status_code}")
     except Exception as e:
-        bark_status = f"PushPlus提醒消息发送失败，错误: {str(e)}"
-        print(f"警告：PushPlus提醒消息发送失败！错误: {str(e)}")
+        bark_status = f"Bark提醒消息发送失败，错误: {str(e)}"
+        print(f"警告：Bark提醒消息发送失败！错误: {str(e)}")
     
     if not bark_message_sent:
         write_log(bark_status)
