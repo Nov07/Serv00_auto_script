@@ -73,6 +73,7 @@ echo ""
 echo "1. 企业微信（需要企业微信机器人 KEY）"
 echo "2. Telegram（需要BOT TOKEN和CHAT ID）"
 echo "3. PushPlus（需要PushPlus Token）"
+echo "4. Bark"
 echo ""
 echo "请仔细阅读以下说明并做出选择。"
 echo "==================================="
@@ -85,17 +86,22 @@ for choice in $choices; do
     case $choice in
         1)
             use_wecom=true
-            download_python_file "https://raw.githubusercontent.com/curry-he/Serv00_auto_script/master/Auto_connect_SSH-WeCom.py" "Auto_connect_SSH-WeCom.py"
+            download_python_file "https://raw.githubusercontent.com/Nov07/Serv00_auto_script/master/Auto_connect_SSH-WeCom.py" "Auto_connect_SSH-WeCom.py"
             install_required_modules "Auto_connect_SSH-WeCom.py"
             ;;
         2)
             use_tg=true
-            download_python_file "https://raw.githubusercontent.com/curry-he/Serv00_auto_script/master/Auto_connect_SSH-TG.py" "Auto_connect_SSH-TG.py"
+            download_python_file "https://raw.githubusercontent.com/Nov07/Serv00_auto_script/master/Auto_connect_SSH-TG.py" "Auto_connect_SSH-TG.py"
             install_required_modules "Auto_connect_SSH-TG.py"
             ;;
         3)
             use_pushplus=true
-            download_python_file "https://raw.githubusercontent.com/curry-he/Serv00_auto_script/master/Auto_connect_SSH-PushPlus.py" "Auto_connect_SSH-PushPlus.py"
+            download_python_file "https://raw.githubusercontent.com/Nov07/Serv00_auto_script/master/Auto_connect_SSH-PushPlus.py" "Auto_connect_SSH-PushPlus.py"
+            install_required_modules "Auto_connect_SSH-PushPlus.py"
+            ;;
+        4)
+            use_bark=true
+            download_python_file "https://raw.githubusercontent.com/Nov07/Serv00_auto_script/master/Auto_connect_SSH-Bark.py" "Auto_connect_SSH-Bark.py"
             install_required_modules "Auto_connect_SSH-PushPlus.py"
             ;;
         *) echo "无效选项: $choice" ;;
@@ -116,6 +122,11 @@ if $use_pushplus; then
     export PUSHPLUS_TOKEN=$(get_input "请输入 PushPlus Token: ")
 fi
 
+if $use_bark; then
+    export BARK_URL=$(get_input "请输入 Bark URL: ")
+    export BARK_KEY=$(get_input "请输入 Bark Key: ")
+fi
+
 # 执行对应的 Python 脚本
 if $use_wecom; then
     python3 Auto_connect_SSH-WeCom.py
@@ -127,6 +138,10 @@ fi
 
 if $use_pushplus; then
     python3 Auto_connect_SSH-PushPlus.py
+fi
+
+if $use_bark; then
+    python3 Auto_connect_SSH-Bark.py
 fi
 
 echo "所有选定的推送任务已完成。"
