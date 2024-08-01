@@ -24,7 +24,7 @@ ssh_password = os.environ.get('SSH_PASSWORD')
 username = os.environ.get('USERNAME')
 
 ssh_info = {  
-    'host': hostname,    # 主机地址
+    'hostname': hostname,    # 主机地址
     'port': 22,  
     'username': username,       # 你的用户名，别写错了
     'password': ssh_password      # 你注册的时候收到的密码或者你自己改了的密码
