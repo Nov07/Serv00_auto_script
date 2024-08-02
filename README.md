@@ -6,13 +6,18 @@
 | :------------: | :------------: | :------------: |
 |Auto_connect_SSH.py|自动SSH登录以续期||
 |alist_freebsd_update.py|自动从uubulb/alist-freebsd拉取最新版本更新||
-|Auto_connect_SSH-WeCom.py|企业微信推送方式|需要企业微信机器人Webhook Key
-|Auto_connect_SSH-TG.py|TG推送方式|需要BOT_TOKEN和CHAT_ID
-|Auto_connect_SSH-PushPLus.py|推送方式|需要PushPlus Token
+|Auto_connect_SSH-WeCom.py|企业微信推送方式|需要企业微信机器人Webhook Key|
+|Auto_connect_SSH-TG.py|TG推送方式|需要BOT_TOKEN和CHAT_ID|
+|Auto_connect_SSH-PushPLus.py|PushPLus推送方式|需要PushPlus Token|
+|Auto_connect_SSH-Bark.py|Bark推送方式|需要Bark_URL和Bark_KEY|
 
 # 自动续期脚本说明
 ## 说明
 　　bg8ixz/Serv00_auto_script基于[LINUX DO](https://linux.do)论坛佬友`maohai`的[脚本](https://linux.do/t/topic/66483/15)进行修改，在其基础上增加了`发送通知`、以及`运行日志`功能。本项目基于bg8ixz/Serv00_auto_script的脚本增加tg和pushplus推送方式，并通过sh脚本设置变量
+
+
+
+Nov07：添加Bark通知推送方式
 
 
 ## 发送说明
@@ -24,8 +29,8 @@
 |  自定义日期 |  固定日启动连接 |每月固定SSH连接提醒|连接SSH|
 
 ## 使用方法
-　　  
-  
+
+
 　　进入domains目录并执行一键脚本：
 ```shell
 cd domains
@@ -42,7 +47,7 @@ curl -O https://raw.githubusercontent.com/Nov07/Serv00_auto_script/master/Serv00
   ![没有Alist文件](https://cdn.linux.do/uploads/default/original/3X/1/f/1f5b378d086d1935cfaf3927c9fc6c33d531eeb7.jpeg)
   ![已经是最新版](https://cdn.linux.do/uploads/default/original/3X/e/7/e72105ffe5f1ee572cca2ded4138472241553bdb.jpeg)
   ![正常更新](https://cdn.linux.do/uploads/default/original/3X/f/5/f58f94d755825005eae30df9dce0ad1f0b661f43.jpeg)
-  
+
 ## 参考来源
 |  名称 |来源|地址|
 | :------------: | :------------: | :------------: |
